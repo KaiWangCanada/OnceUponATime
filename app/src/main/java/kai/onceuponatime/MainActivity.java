@@ -7,10 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.facebook.device.yearclass.YearClass;
+
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class MainActivity extends Activity {
+
+    private int mYear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +23,12 @@ public class MainActivity extends Activity {
     }
 
     public void click(View view) {
-        showShare();
+
+//        showShare();
+
+        mYear = YearClass.get(getApplicationContext());
+        System.out.println("year: " + mYear);
+        
     }
 
     private void showShare() {
